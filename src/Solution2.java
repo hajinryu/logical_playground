@@ -13,15 +13,15 @@ public class Solution2 {
         a1.add(a1_1);
 
         Map<String, Object> a1_2 = new HashMap<>();
-        a1_2.put("user_no", 2);
-        a1_2.put("name", "namename");
-        a1.add(a1_2);
+//        a1_2.put("user_no", 2);
+//        a1_2.put("name", "namename");
+//        a1.add(a1_2);
 
 
         Map<String, Object> a1_3 = new HashMap<>();
-        a1_3.put("user_no", 7);
-        a1_3.put("name", "namename");
-        a1.add(a1_3);
+//        a1_3.put("user_no", 7);
+//        a1_3.put("name", "namename");
+//        a1.add(a1_3);
 
         List<Map<String,Object>> b1 = new ArrayList<>();
         Map<String, Object> b1_1 = new HashMap<>();
@@ -30,14 +30,14 @@ public class Solution2 {
         b1.add(b1_1);
 
         Map<String, Object> b1_2 = new HashMap<>();
-        b1_2.put("user_no", 2);
-        b1_2.put("name", "dd");
-        b1.add(b1_2);
+//        b1_2.put("user_no", 2);
+//        b1_2.put("name", "dd");
+//        b1.add(b1_2);
 
         Map<String, Object> b1_3 = new HashMap<>();
-        b1_3.put("user_no", 3);
-        b1_3.put("name", "hajin");
-        b1.add(b1_3);
+//        b1_3.put("user_no", 3);
+//        b1_3.put("name", "hajin");
+//        b1.add(b1_3);
 
         List<Map<String, Object>> insertList = new ArrayList<>();
         List<Map<String, Object>> deleteList = new ArrayList<>();
@@ -65,6 +65,10 @@ public class Solution2 {
                         break;
                     }
                 }
+                // updateList가 쌓인다면
+                // user_no 기준으로 map 객체를 꺼내서 어떤 부분이 변경되었는지 알아낼것.
+                // 변경된 데이터가 있는지 없는지 확인해서 없다면 return
+                // 변경된 데이터가 있는지 없는지 확인해서 없다면 return
             }
         }
         for (Map<String, Object> bMap : b1) {
@@ -74,12 +78,22 @@ public class Solution2 {
             }
         }
 
+        //deleteList 실행 로직 추가
+        //insertList 실행 로직
+        // 추가적으로 값이 변한게 없을수도있으니 확인 로직
+
 
         System.out.println("bUserNoList = " + bUserNoList);
         System.out.println("aUserNoList = " + aUserNoList);
         System.out.println("insertList = " + insertList);
         System.out.println("deleteList = " + deleteList);
         System.out.println("updateList = " + updateList);
+
+//        bUserNoList = [1, 2, 3]
+//        aUserNoList = [1, 2, 7]
+//        insertList = [{name=namename, user_no=7}]
+//        deleteList = [{name=hajin, user_no=3}]
+//        updateList = [{name=name1, user_no=1}, {name=namename, user_no=2}]
     }
 }
 
